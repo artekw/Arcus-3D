@@ -616,7 +616,7 @@ setp scale.e0-fan-comp.gain [EXTRUDER_0]FAN_BIAS
 
 # Thermistor checking
 setp thermistor-check.e0.wait 9.0
-setp thermistor-check.e0.min-pid 0.25
+setp thermistor-check.e0.min-pid 1.25
 setp thermistor-check.e0.min-temp 1.5
 net e0.pid.bias => thermistor-check.e0.bias
 
