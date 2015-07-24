@@ -287,8 +287,8 @@ setp hpg.stepgen.00.maxvel          [AXIS_0]STEPGEN_MAX_VEL
 setp hpg.stepgen.00.maxaccel        [AXIS_0]STEPGEN_MAX_ACC
 
 #setp hpg.stepgen.00.step_type       0
-setp hpg.stepgen.00.steppin         [AXIS_0]STEPPIN
-setp hpg.stepgen.00.dirpin          [AXIS_0]DIRPIN
+setp hpg.stepgen.00.steppin         813
+setp hpg.stepgen.00.dirpin          812
 
 
 # ################
@@ -324,8 +324,8 @@ setp hpg.stepgen.01.maxvel          [AXIS_1]STEPGEN_MAX_VEL
 setp hpg.stepgen.01.maxaccel        [AXIS_1]STEPGEN_MAX_ACC
 
 #setp hpg.stepgen.01.step_type       0
-setp hpg.stepgen.01.steppin         [AXIS_1]STEPPIN
-setp hpg.stepgen.01.dirpin          [AXIS_1]DIRPIN
+setp hpg.stepgen.01.steppin         815
+setp hpg.stepgen.01.dirpin          814
 
 
 # ################
@@ -359,8 +359,8 @@ setp hpg.stepgen.02.maxvel          [AXIS_2]STEPGEN_MAX_VEL
 setp hpg.stepgen.02.maxaccel        [AXIS_2]STEPGEN_MAX_ACC
 
 #setp hpg.stepgen.02.step_type       0
-setp hpg.stepgen.02.steppin         [AXIS_2]STEPPIN
-setp hpg.stepgen.02.dirpin          [AXIS_2]DIRPIN
+setp hpg.stepgen.02.steppin         819
+setp hpg.stepgen.02.dirpin          818
 
 
 # ################
@@ -595,108 +595,8 @@ setp hpg.stepgen.03.position-scale  [AXIS_3]SCALE
 setp hpg.stepgen.03.maxvel          [AXIS_3]STEPGEN_MAX_VEL
 setp hpg.stepgen.03.maxaccel        [AXIS_3]STEPGEN_MAX_ACC
 #setp hpg.stepgen.03.step_type       0
-setp hpg.stepgen.03.steppin         [AXIS_3]STEPPIN
-setp hpg.stepgen.03.dirpin          [AXIS_3]DIRPIN
-
-# Extruder 2
-# axis enable chain
-newsig emcmot.04.enable bit
-#net emcmot.04.enable <= axis.4.amp-enable-out
-net emcmot.04.enable => hpg.stepgen.04.enable
-sets emcmot.04.enable TRUE
-# position command and feedback
-#net emcmot.04.pos-cmd <= axis.4.motor-pos-cmd
-#net emcmot.04.pos-cmd => hpg.stepgen.04.position-cmd
-#net motor.04.pos-fb <= hpg.stepgen.04.position-fb
-#net motor.04.pos-fb => axis.4.motor-pos-fb
-
-# timing parameters
-setp hpg.stepgen.04.control-type    1
-setp hpg.stepgen.04.dirsetup        [AXIS_4]DIRSETUP
-setp hpg.stepgen.04.dirhold         [AXIS_4]DIRHOLD
-setp hpg.stepgen.04.steplen         [AXIS_4]STEPLEN
-setp hpg.stepgen.04.stepspace       [AXIS_4]STEPSPACE
-setp hpg.stepgen.04.position-scale  [AXIS_4]SCALE
-setp hpg.stepgen.04.maxvel          [AXIS_4]STEPGEN_MAX_VEL
-setp hpg.stepgen.04.maxaccel        [AXIS_4]STEPGEN_MAX_ACC
-#setp hpg.stepgen.04.step_type       0
-setp hpg.stepgen.04.steppin         [AXIS_4]STEPPIN
-setp hpg.stepgen.04.dirpin          [AXIS_4]DIRPIN
-
-# Extruder 3
-# axis enable chain
-newsig emcmot.05.enable bit
-#net emcmot.05.enable <= axis.5.amp-enable-out
-net emcmot.05.enable => hpg.stepgen.05.enable
-sets emcmot.05.enable TRUE
-# position command and feedback
-#net emcmot.05.pos-cmd <= axis.5.motor-pos-cmd
-#net emcmot.05.pos-cmd => hpg.stepgen.05.position-cmd
-#net motor.05.pos-fb <= hpg.stepgen.05.position-fb
-#net motor.05.pos-fb => axis.5.motor-pos-fb
-
-# timing parameters
-setp hpg.stepgen.05.control-type    1
-setp hpg.stepgen.05.dirsetup        [AXIS_5]DIRSETUP
-setp hpg.stepgen.05.dirhold         [AXIS_5]DIRHOLD
-setp hpg.stepgen.05.steplen         [AXIS_5]STEPLEN
-setp hpg.stepgen.05.stepspace       [AXIS_5]STEPSPACE
-setp hpg.stepgen.05.position-scale  [AXIS_5]SCALE
-setp hpg.stepgen.05.maxvel          [AXIS_5]STEPGEN_MAX_VEL
-setp hpg.stepgen.05.maxaccel        [AXIS_5]STEPGEN_MAX_ACC
-#setp hpg.stepgen.05.step_type       0
-setp hpg.stepgen.05.steppin         [AXIS_5]STEPPIN
-setp hpg.stepgen.05.dirpin          [AXIS_5]DIRPIN
-
-# Extruder 4
-# axis enable chain
-newsig emcmot.06.enable bit
-#net emcmot.06.enable <= axis.6.amp-enable-out
-net emcmot.06.enable => hpg.stepgen.06.enable
-sets emcmot.06.enable TRUE
-# position command and feedback
-#net emcmot.06.pos-cmd <= axis.6.motor-pos-cmd
-#net emcmot.06.pos-cmd => hpg.stepgen.06.position-cmd
-#net motor.06.pos-fb <= hpg.stepgen.06.position-fb
-#net motor.06.pos-fb => axis.6.motor-pos-fb
-
-# timing parameters
-setp hpg.stepgen.06.control-type    1
-setp hpg.stepgen.06.dirsetup        [AXIS_6]DIRSETUP
-setp hpg.stepgen.06.dirhold         [AXIS_6]DIRHOLD
-setp hpg.stepgen.06.steplen         [AXIS_6]STEPLEN
-setp hpg.stepgen.06.stepspace       [AXIS_6]STEPSPACE
-setp hpg.stepgen.06.position-scale  [AXIS_6]SCALE
-setp hpg.stepgen.06.maxvel          [AXIS_6]STEPGEN_MAX_VEL
-setp hpg.stepgen.06.maxaccel        [AXIS_6]STEPGEN_MAX_ACC
-#setp hpg.stepgen.06.step_type       0
-setp hpg.stepgen.06.steppin         [AXIS_6]STEPPIN
-setp hpg.stepgen.06.dirpin          [AXIS_6]DIRPIN
-
-# Extruder 5
-# axis enable chain
-newsig emcmot.07.enable bit
-#net emcmot.07.enable <= axis.7.amp-enable-out
-net emcmot.07.enable => hpg.stepgen.07.enable
-sets emcmot.07.enable TRUE
-# position command and feedback
-#net emcmot.07.pos-cmd <= axis.7.motor-pos-cmd
-#net emcmot.07.pos-cmd => hpg.stepgen.07.position-cmd
-#net motor.07.pos-fb <= hpg.stepgen.07.position-fb
-#net motor.07.pos-fb => axis.7.motor-pos-fb
-
-# timing parameters
-setp hpg.stepgen.07.control-type    1
-setp hpg.stepgen.07.dirsetup        [AXIS_7]DIRSETUP
-setp hpg.stepgen.07.dirhold         [AXIS_7]DIRHOLD
-setp hpg.stepgen.07.steplen         [AXIS_7]STEPLEN
-setp hpg.stepgen.07.stepspace       [AXIS_7]STEPSPACE
-setp hpg.stepgen.07.position-scale  [AXIS_7]SCALE
-setp hpg.stepgen.07.maxvel          [AXIS_7]STEPGEN_MAX_VEL
-setp hpg.stepgen.07.maxaccel        [AXIS_7]STEPGEN_MAX_ACC
-#setp hpg.stepgen.07.step_type       0
-setp hpg.stepgen.07.steppin         [AXIS_7]STEPPIN
-setp hpg.stepgen.07.dirpin          [AXIS_7]DIRPIN
+setp hpg.stepgen.03.steppin         916
+setp hpg.stepgen.03.dirpin          912
 
 
 # ##################################################
@@ -741,16 +641,16 @@ net limit-x-min <= bb_gpio.p8.in-08
 net limit-x-max <= bb_gpio.p8.in-07
 net limit-y-min <= bb_gpio.p8.in-10
 net limit-y-max <= bb_gpio.p8.in-09
-# net limit-z-min <= bb_gpio.p9.in-13
+net limit-z-min <= bb_gpio.p9.in-13
 net limit-z-max <= bb_gpio.p9.in-11
 
 # Adjust as needed for your switch polarity
-setp bb_gpio.p8.in-08.invert 0
-setp bb_gpio.p8.in-07.invert 0
-setp bb_gpio.p8.in-10.invert 0
-setp bb_gpio.p8.in-09.invert 0
-setp bb_gpio.p9.in-11.invert 0
-setp bb_gpio.p9.in-13.invert 0
+setp bb_gpio.p8.in-08.invert 1
+setp bb_gpio.p8.in-07.invert 1
+setp bb_gpio.p8.in-10.invert 1
+setp bb_gpio.p8.in-09.invert 1
+setp bb_gpio.p9.in-11.invert 1
+setp bb_gpio.p9.in-13.invert 1
 
 # Uncomment if you actually have limit switches setup
 # You probably want to setup homing in the INI file, as well
