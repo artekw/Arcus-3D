@@ -220,22 +220,6 @@ newcomp fdm-ew0 timer=100
 newpin fdm-ew0 fdm-ew0.weight    float io
 ready fdm-ew0
 
-newcomp fdm-ew1 timer=100
-newpin fdm-ew1 fdm-ew1.weight    float io
-ready fdm-ew1
-
-newcomp fdm-ew2 timer=100
-newpin fdm-ew2 fdm-ew2.weight    float io
-ready fdm-ew2
-
-newcomp fdm-ew3 timer=100
-newpin fdm-ew3 fdm-ew3.weight    float io
-ready fdm-ew3
-
-newcomp fdm-ew4 timer=100
-newpin fdm-ew4 fdm-ew4.weight    float io
-ready fdm-ew4
-
 newcomp fdm-e0-pid timer=100
 newpin fdm-e0-pid fdm-e0-pid.Pgain              float io
 newpin fdm-e0-pid fdm-e0-pid.Igain              float io
@@ -510,50 +494,6 @@ net ew0.extrude-vel-weighted => hpg.stepgen.03.velocity-cmd
 sets ew0.scaler 0.01
 sets ew0.weight 100.0
 
-
-newsig ew1.weight float
-net ew1.weight  => mult2.ew1.in0
-net ew1.scaler  => mult2.ew1.in1
-net ew1.scale   <= mult2.ew1.out
-net ew1.scale   => scale.ew1.gain
-net ve.extrude-vel => scale.ew1.in
-net ew1.extrude-vel-weighted <= scale.ew1.out
-net ew1.extrude-vel-weighted => hpg.stepgen.04.velocity-cmd
-sets ew1.scaler 0.01
-sets ew1.weight 0.0
-
-newsig ew2.weight float
-net ew2.weight  => mult2.ew2.in0
-net ew2.scaler  => mult2.ew2.in1
-net ew2.scale   <= mult2.ew2.out
-net ew2.scale   => scale.ew2.gain
-net ve.extrude-vel => scale.ew2.in
-net ew2.extrude-vel-weighted <= scale.ew2.out
-net ew2.extrude-vel-weighted => hpg.stepgen.05.velocity-cmd
-sets ew2.scaler 0.01
-sets ew2.weight 0.0
-
-newsig ew3.weight float
-net ew3.weight  => mult2.ew3.in0
-net ew3.scaler  => mult2.ew3.in1
-net ew3.scale   <= mult2.ew3.out
-net ew3.scale   => scale.ew3.gain
-net ve.extrude-vel => scale.ew3.in
-net ew3.extrude-vel-weighted <= scale.ew3.out
-net ew3.extrude-vel-weighted => hpg.stepgen.06.velocity-cmd
-sets ew3.scaler 0.01
-sets ew3.weight 0.0
-
-newsig ew4.weight float
-net ew4.weight  => mult2.ew4.in0
-net ew4.scaler  => mult2.ew4.in1
-net ew4.scale   <= mult2.ew4.out
-net ew4.scale   => scale.ew4.gain
-net ve.extrude-vel => scale.ew4.in
-net ew4.extrude-vel-weighted <= scale.ew4.out
-net ew4.extrude-vel-weighted => hpg.stepgen.07.velocity-cmd
-sets ew4.scaler 0.01
-sets ew4.weight 0.0
 
 # scale active Mixer speed to match extrude velocity
 
@@ -1089,10 +1029,10 @@ net ve.extrude-scale            <=> fdm-ve-params.extrude-scale
 net c0.weight          <=> fdm-c0.weight
 net m0.weight          <=> fdm-m0.weight
 net ew0.weight          <=> fdm-ew0.weight
-net ew1.weight          <=> fdm-ew1.weight
-net ew2.weight          <=> fdm-ew2.weight
-net ew3.weight          <=> fdm-ew3.weight
-net ew4.weight          <=> fdm-ew4.weight
+#net ew1.weight          <=> fdm-ew1.weight
+#net ew2.weight          <=> fdm-ew2.weight
+#net ew3.weight          <=> fdm-ew3.weight
+#net ew4.weight          <=> fdm-ew4.weight
 net ve.extrude-accel-adj-gain   <=> fdm-ve-params.accel-adj-gain
 
 # monitor the estop error sources
